@@ -76,7 +76,6 @@ namespace Reading_app
             this.username_textBox.Name = "username_textBox";
             this.username_textBox.Size = new System.Drawing.Size(290, 27);
             this.username_textBox.TabIndex = 3;
-            this.username_textBox.Text = "Enter username or email address";
             // 
             // password_textBox
             // 
@@ -146,11 +145,11 @@ namespace Reading_app
         private System.Windows.Forms.Label welcome_label;
         private System.Windows.Forms.Label username_label;
         private System.Windows.Forms.Label password_label;
-        private System.Windows.Forms.TextBox username_textBox;
         private System.Windows.Forms.TextBox password_textBox;
         private System.Windows.Forms.LinkLabel clickHere_linkLabel;
         private System.Windows.Forms.Label notMember_label;
         private System.Windows.Forms.Button login_button;
+        private System.Windows.Forms.TextBox username_textBox;
     }
 }
 

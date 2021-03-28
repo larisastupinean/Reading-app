@@ -28,21 +28,24 @@ namespace Reading_app
         {
             Boolean username = false;
             Boolean password = false;
+            string user = string.Empty;
             StreamReader streamReader = new StreamReader(path: "user_data.txt");
             string line = string.Empty;
             while ((line = streamReader.ReadLine()) != null)
             {
                 string[] tempArray = line.Split(' ');
-                if (((tempArray[0].Equals("Username:")) || (tempArray[0].Equals("Email:"))) &&
-                    (tempArray[1].Equals(username_textBox.Text)))
+                if ((tempArray[0].Equals("Username:")) && (tempArray[1].Equals(username_textBox.Text)))
+                {
                     username = true;
+                    user = tempArray[1];
+                }
                 if ((tempArray[0].Equals("Password:")) && (tempArray[1].Equals(password_textBox.Text)))
                     password = true;
             }
             if (username && password)
             {
                 this.Visible = false;
-                Form3 form3 = new Form3();
+                Form3 form3 = new Form3(user);
                 form3.Show();
             }
             else
