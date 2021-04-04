@@ -164,8 +164,9 @@ namespace Reading_app
             this.prog_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prog_label.Location = new System.Drawing.Point(453, 272);
             this.prog_label.Name = "prog_label";
-            this.prog_label.Size = new System.Drawing.Size(0, 20);
+            this.prog_label.Size = new System.Drawing.Size(33, 20);
             this.prog_label.TabIndex = 12;
+            this.prog_label.Text = "0%";
             // 
             // addBook_button
             // 
