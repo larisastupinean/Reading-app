@@ -44,15 +44,28 @@ namespace Reading_app
                     if ((tempArray[0].Equals("Password:")) && (tempArray[1].Equals(password_textBox.Text)))
                         password = true;
                 }
-                if (username && password)
+                if (!String.IsNullOrEmpty(username_textBox.Text) && !String.IsNullOrEmpty(password_textBox.Text))
                 {
-                    this.Visible = false;
-                    Form3 form3 = new Form3(user);
-                    form3.Show();
+                    if (username && password)
+                    {
+                        this.Visible = false;
+                        Form3 form3 = new Form3(user);
+                        form3.Show();
+                    }
+                    else
+                        MessageBox.Show("Invalid username or password!", "Error!");
                 }
-                else
-                    MessageBox.Show("Invalid username or password!", "Error!");
+                else if (String.IsNullOrEmpty(username_textBox.Text))
+                    MessageBox.Show("Enter username!", "Error!");
+                else if (String.IsNullOrEmpty(password_textBox.Text))
+                    MessageBox.Show("Enter password!", "Error!");
             }
+            else if (String.IsNullOrEmpty(username_textBox.Text))
+                MessageBox.Show("Enter username!", "Error!");
+            else if (String.IsNullOrEmpty(password_textBox.Text))
+                MessageBox.Show("Enter password!", "Error!");
+            else
+                MessageBox.Show("Invalid username or password!", "Error!");
         }
     }
 }
