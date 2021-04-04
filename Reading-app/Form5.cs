@@ -15,11 +15,13 @@ namespace Reading_app
     {
         string user;
         string title;
-        public Form5(string user, string title)
+        public Form5(string user, string title, int progress)
         {
             InitializeComponent();
             this.user = user;
             this.title = title;
+            updateProg_trackBar.Minimum = progress;
+            percentProg_label.Text = progress + "%";
         }
 
         private void updateProg_trackBar_Scroll(object sender, EventArgs e)
@@ -48,6 +50,7 @@ namespace Reading_app
                 allLines[index + 4] = "Progress: " + updateProg_trackBar.Value;
                 File.WriteAllLines(file, allLines);
             }
+            MessageBox.Show("Your progress has been saved!", "Update successfull!");
             this.Close();
         }
 

@@ -46,6 +46,7 @@ namespace Reading_app
                 allLines[index + 6] = "Comment: " + comment_richTextBox.Text;
                 File.WriteAllLines(file, allLines);
             }
+            MessageBox.Show("Your review has been saved!", "Good job! You finished another book!");
             this.Close();
         }
     }

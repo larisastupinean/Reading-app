@@ -14,6 +14,7 @@ namespace Reading_app
     public partial class Form3 : Form
     {
         string user;
+        int progress;
         public Form3(string user)
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace Reading_app
                     dateFinished_textBox.Text = tempArray[1];
                 if ((index != 0) && (noLine == (index + 5)) && (tempArray[0].Equals("Progress")))
                 {
+                    this.progress = Convert.ToInt32(tempArray[1]);
                     selectedBook_progressBar.Value = Convert.ToInt32(tempArray[1]);
                     selectedBookProg_label.Text = tempArray[1] + '%';
                 }
@@ -81,7 +83,7 @@ namespace Reading_app
         {
             if (yourBooks_comboBox.SelectedItem != null)
             {
-                Form5 form5 = new Form5(user, yourBooks_comboBox.SelectedItem.ToString());
+                Form5 form5 = new Form5(user, yourBooks_comboBox.SelectedItem.ToString(), this.progress);
                 form5.Show();
             }
             else
